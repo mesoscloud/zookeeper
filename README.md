@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/mesoscloud/zookeeper](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mesoscloud/zookeeper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-*Work in progress*
+ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
 
 ## centos
 
