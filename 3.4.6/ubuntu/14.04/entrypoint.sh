@@ -1,12 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 # based on https://github.com/apache/zookeeper/blob/trunk/conf/zoo_sample.cfg
 cat > /opt/zookeeper/conf/zoo.cfg <<EOF
-tickTime=2000
-initLimit=10
-syncLimit=5
+tickTime=${TICK_TIME:-2000}
+initLimit=${INIT_LIMIT:-10}
+syncLimit=${SYNC_LIMIT:-5}
 dataDir=/tmp/zookeeper
 clientPort=2181
+cnxTimeout=${CNX_TO_MS:-5000}
 EOF
 
 # server.1=...
