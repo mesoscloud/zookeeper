@@ -13,9 +13,9 @@ https://zookeeper.apache.org/
 e.g.
 
 ```
-docker run -d
--e MYID=1
--e SERVERS=node-1,node-2,node-3
+docker run -d \
+-e MYID=1 \
+-e SERVERS=node-1,node-2,node-3 \
 --name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.6-centos-7
 ```
 
@@ -26,8 +26,8 @@ docker run -d
 e.g.
 
 ```
-docker run -d
--e MYID=1
--e SERVERS=node-1,node-2,node-3
+docker run -d \
+-e MYID=1 \
+-e SERVERS=node-1,node-2,node-3 \
 --name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.6-ubuntu-14.04
 ```

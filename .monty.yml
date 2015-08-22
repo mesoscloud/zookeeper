@@ -4,7 +4,7 @@
     - mesoscloud/zookeeper:3.4.6-centos
     - mesoscloud/zookeeper:3.4.6
     - mesoscloud/zookeeper:latest
-    
+
 - build: 3.4.6/ubuntu/14.04
   image:
     - mesoscloud/zookeeper:3.4.6-ubuntu-14.04
@@ -12,18 +12,4 @@
 
 
 - tests:
-    - cmd: test "`which zkServer.sh`" = /opt/zookeeper/bin/zkServer.sh
-
-    # -e MYID
-    - cmd: test "`cat /tmp/zookeeper/myid`" -eq 1  # default
-
-    - cmd: test "`cat /tmp/zookeeper/myid`" -eq 2
-      env:
-        - MYID=2
-
-    # -e SERVERS
-    - cmd: grep -F server.1= /opt/zookeeper/conf/zoo.cfg; test $? -ne 0
-
-    - cmd: grep -F server.1=node-1:2888:3888 /opt/zookeeper/conf/zoo.cfg
-      env:
-        - SERVERS=node-1
+    - cmd: zkServer.sh print-cmd
