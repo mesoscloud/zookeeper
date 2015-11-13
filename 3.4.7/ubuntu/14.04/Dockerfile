@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 RUN apt-get update && \
-apt-get install -y curl openjdk-7-jre-headless python
+apt-get install -y curl openjdk-7-jre-headless
 
 # https://www.apache.org/mirrors/dist.html
 RUN curl -fL http://archive.apache.org/dist/zookeeper/zookeeper-3.4.7/zookeeper-3.4.7.tar.gz | tar xzf - -C /opt && \
