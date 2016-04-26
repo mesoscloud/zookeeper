@@ -8,7 +8,7 @@ https://zookeeper.apache.org/
 
 ## CentOS
 
-[![](https://badge.imagelayers.io/mesoscloud/zookeeper:3.4.6-centos-7.svg)](https://imagelayers.io/?images=mesoscloud/zookeeper:3.4.6-centos-7)
+[![](https://badge.imagelayers.io/mesoscloud/zookeeper:3.4.8-centos-7.svg)](https://imagelayers.io/?images=mesoscloud/zookeeper:3.4.8-centos-7)
 
 e.g.
 
@@ -16,12 +16,12 @@ e.g.
 docker run -d \
 -e MYID=1 \
 -e SERVERS=node-1,node-2,node-3 \
---name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.6-centos-7
+--name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.8-centos-7
 ```
 
 ## Ubuntu
 
-[![](https://badge.imagelayers.io/mesoscloud/zookeeper:3.4.6-ubuntu-14.04.svg)](https://imagelayers.io/?images=mesoscloud/zookeeper:3.4.6-ubuntu-14.04)
+[![](https://badge.imagelayers.io/mesoscloud/zookeeper:3.4.8-ubuntu-14.04.svg)](https://imagelayers.io/?images=mesoscloud/zookeeper:3.4.8-ubuntu-14.04)
 
 e.g.
 
@@ -29,5 +29,5 @@ e.g.
 docker run -d \
 -e MYID=1 \
 -e SERVERS=node-1,node-2,node-3 \
---name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.6-ubuntu-14.04
+--name=zookeeper --net=host --restart=always mesoscloud/zookeeper:3.4.8-ubuntu-14.04
 ```
