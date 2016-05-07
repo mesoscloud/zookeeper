@@ -13,7 +13,7 @@ EOF
 
 # server.1=...
 if [ -n "$SERVERS" ]; then
-    python -c "print '\n'.join(['server.%i=%s:2888:3888' % (i + 1, x) for i, x in enumerate('$SERVERS'.split(','))])" >> /opt/zookeeper/conf/zoo.cfg
+    printf $SERVERS | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
 fi
 
 exec "$@"

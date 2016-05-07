@@ -24,3 +24,11 @@
 
 - tests:
     - cmd: zkServer.sh print-cmd
+
+    - cmd: test "`tail -n1 /opt/zookeeper/conf/zoo.cfg`" = 'server.1=127.0.0.1:2888:3888'
+      env:
+        - SERVERS=127.0.0.1
+
+    - cmd: test "`tail -n1 /opt/zookeeper/conf/zoo.cfg`" = 'server.3=192.168.33.3:2888:3888'
+      env:
+        - SERVERS=192.168.33.1,192.168.33.2,192.168.33.3
