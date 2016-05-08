@@ -8,7 +8,7 @@ script:
     set -e
     for path in `find . -name Dockerfile`; do
         echo $path
-        docker run --rm -i lukasmartinelli/hadolint < $path
+        docker run --rm -i pdericson/hadolint < $path
     done
   - |
     set -e

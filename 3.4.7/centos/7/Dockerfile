@@ -1,4 +1,5 @@
 FROM centos:7
+MAINTAINER Peter Ericson <pdericson@gmail.com>
 
 RUN yum install -y java-1.7.0-openjdk-headless tar
 

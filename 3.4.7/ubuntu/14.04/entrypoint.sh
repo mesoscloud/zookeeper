@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo ${MYID:-1} > /tmp/zookeeper/myid
+echo "${MYID:-1}" > /tmp/zookeeper/myid
 
 # based on https://github.com/apache/zookeeper/blob/trunk/conf/zoo_sample.cfg
 cat > /opt/zookeeper/conf/zoo.cfg <<EOF
@@ -13,7 +13,7 @@ EOF
 
 # server.1=...
 if [ -n "$SERVERS" ]; then
-    printf $SERVERS | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
+    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
 fi
 
 exec "$@"
