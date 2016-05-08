@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - |
+    set -e
+    for path in `find . -name Dockerfile`; do
+        echo $path
+        docker run --rm -i lukasmartinelli/hadolint < $path
+    done
+  - |
+    set -e
+    for path in `find . -name \*.sh`; do
+        echo $path
+        docker run --rm -i -v "$PWD":/mnt lukasmartinelli/hadolint shellcheck /mnt/$path
+    done
