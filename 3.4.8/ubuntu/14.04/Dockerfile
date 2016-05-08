@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
+MAINTAINER Peter Ericson <pdericson@gmail.com>
 
 RUN apt-get update && \
-apt-get install -y curl openjdk-7-jre-headless
+apt-get install --no-install-recommends -y curl openjdk-7-jre-headless && rm -rf /var/lib/apt/lists/*
 
 # https://www.apache.org/mirrors/dist.html
 RUN curl -fL http://archive.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz | tar xzf - -C /opt && \
